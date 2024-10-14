@@ -145,8 +145,8 @@ public class Overworld : Scene
 		foreach (var level in Assets.Levels)
 			entries.Add(new(level));
 
-		var cardWidth = CardWidth / 6.0f / Game.RelativeScale;
-		var cardHeight = CardHeight / 6.0f / Game.RelativeScale;
+		var cardWidth = CardWidth / 6.0f / Game.RelativeScale / 3.0f;
+		var cardHeight = CardHeight / 6.0f / Game.RelativeScale / 3.0f;
 
 		mesh.SetVertices<SpriteVertex>([
 			new(new Vec3(-cardWidth, 0, -cardHeight) / 2, new Vec2(0, 0), Color.White),

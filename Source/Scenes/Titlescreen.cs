@@ -42,8 +42,8 @@ public class Titlescreen : Scene
     {
 		target.Clear(Color.Black, 1, 0, ClearMask.All);
 
-		var camFrom = new Vec3(0, -200, 60);
-		var camTo = new Vec3(00, -80, 50);
+		var camFrom = new Vec3(0, -200 * Game.RelativeScale, 60);
+		var camTo = new Vec3(00, -80 * Game.RelativeScale, 50);
 
 		wobble += (Controls.Camera.Value - wobble) * (1 - MathF.Pow(.1f, Time.Delta));
 

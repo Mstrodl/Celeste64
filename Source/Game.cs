@@ -37,15 +37,16 @@ public class Game : Module
 
 	public const string GamePath = "Celeste64";
 	public const string GameTitle = "Celeste 64: Fragments of the Mountain";
-	public const int Width = 640;
-	public const int Height = 360;
+	public const int Width = 1080;
+	public const int Height = 2560;
 	public static readonly Version Version = typeof(Game).Assembly.GetName().Version!;
 	public static readonly string VersionString = $"v.{Version.Major}.{Version.Minor}.{Version.Build}";
 
 	/// <summary>
 	/// Used by various rendering elements to proportionally scale if you change the default game resolution
 	/// </summary>
-	public const float RelativeScale = Height / 360.0f;
+	public const float RelativeScale = (Height / 360.0f) > (Width / 640.0f) ? Width / 640.0f : Height / 360.0f;
+	public const float UIScale = 2.5f;
 
 	private static Game? instance;
 	public static Game Instance => instance ?? throw new Exception("Game isn't running");
